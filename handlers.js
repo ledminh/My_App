@@ -1,9 +1,5 @@
-import { MODAL } from "./elements.js";
+import Modal, { ADD_NEW_NOTE } from "./modal.js";
 
 export function addNewNodeHandler() {
-  MODAL.style.display = "block";
-}
-
-export function closeModalHandler() {
-  MODAL.style.display = "none";
+  Modal.open(ADD_NEW_NOTE);
 }

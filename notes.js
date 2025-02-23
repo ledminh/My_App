@@ -1,4 +1,5 @@
 import { NOTES_LIST } from "./elements.js";
+import Modal, { EDIT_NOTE, DELETE_NOTE } from "./modal.js";
 
 const NOTES = [
   {
@@ -59,11 +60,11 @@ function processNote(note) {
       const deleteButton = node.querySelector("button.danger");
 
       editButton.addEventListener("click", () => {
-        console.log(`Edit button clicked for note: ${title}`);
+        Modal.open(EDIT_NOTE, note);
       });
 
       deleteButton.addEventListener("click", () => {
-        console.log(`Delete button clicked for note: ${title}`);
+        Modal.open(DELETE_NOTE, note);
       });
 
       NOTES_LIST.appendChild(node);
